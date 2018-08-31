@@ -1,6 +1,9 @@
 export class DNIValidator {
 
     static validate(dni: string):boolean {
-        return true;
+        if (dni.length === 9) {
+            return true;
+        }
+        return false;
     }
 }
