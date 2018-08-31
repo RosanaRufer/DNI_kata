@@ -3,7 +3,7 @@ import { DNIValidator } from "../src/dni-validator";
 describe('DNI validator tests', () => {
 
     it('A correct DNI is valid', () => {
-        // Arragne
+        // Arrange
         const validDNI = '44650684W';
 
         // Act
@@ -11,6 +11,17 @@ describe('DNI validator tests', () => {
 
         // Assert
         expect(isValid).toBe(true);
+    });
+
+    it('A DNI with less than 9 characters is not valid', () => {
+        // Arrange
+        const invalidDNI = '111W';
+
+        // Act
+        let isValid = DNIValidator.validate(invalidDNI);
+
+        // Assert
+        expect(isValid).toBe(false);
     });
 
 });
