@@ -11,8 +11,11 @@ describe('DNI validator tests', () => {
     it('A DNI that does not have exactly 9 characters is not valid', () => {
         assertValidity('111W', false);
         assertValidity('', false);
-        assertValidity('1234567A', false);
-        assertValidity('123456789A', false);
+        assertValidity('------7A', false);
+        assertValidity('--------9A', false);
     });
 
+    it('A DNI that does not have 8 digits followed by a-z letter is not valid', () => {
+        assertValidity('12345678-', false);
+    });
 });
