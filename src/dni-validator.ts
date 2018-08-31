@@ -1,6 +1,6 @@
 export class DNIValidator {
 
-    validate(dni: string):boolean {
-
+    static validate(dni: string):boolean {
+        return true;
     }
 }
